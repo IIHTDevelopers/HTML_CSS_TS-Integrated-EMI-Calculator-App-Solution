@@ -4,10 +4,10 @@ const axios = require('axios');
 const xmlBuilder = require('xmlbuilder');
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
-const jsPath = path.join(__dirname, '../script.js');
+const jsPath = path.join(__dirname, '../../dist/script.js');
 const jsContent = fs.readFileSync(jsPath, 'utf8');
 const esprima = require('esprima');
-const calculator = require('../script');
+const calculator = require('../../dist/script');
 
 class TestCaseResultDto {
     constructor(methodName, methodType, actualScore, earnedScore, status, isMandatory, errorMessage) {
@@ -255,7 +255,7 @@ function executeAllTestCases() {
     deleteOutputFiles();
 
     const filePath = path.join(__dirname, '../index.html');
-    const jsPath = path.join(__dirname, '../script.js');
+    const jsPath = path.join(__dirname, '../../dist/script.js');
     const jsContent = fs.readFileSync(jsPath, 'utf8');
     const cssFilePath = path.join(__dirname, '../style.css');
     const cssContent = fs.readFileSync(cssFilePath, 'utf8');
